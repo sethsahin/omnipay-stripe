@@ -379,7 +379,7 @@ class AuthorizeRequest extends AbstractRequest
             ];
         } else {
             // one of cardReference, token, or card is required
-            $this->validate('paymentMethod');
+            //$this->validate('paymentMethod');
         }
 
         if ($this->getCustomerReference()) {
