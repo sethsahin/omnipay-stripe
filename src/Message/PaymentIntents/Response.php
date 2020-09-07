@@ -168,4 +168,13 @@ class Response extends BaseResponse implements RedirectResponseInterface
 
         return null;
     }
+
+    public function getClientSecret()
+    {
+        if($this->data['client_secret']) {
+            return $this->data['client_secret'];
+        }
+
+        return null;
+    }
 }
