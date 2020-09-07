@@ -128,6 +128,25 @@ class AuthorizeRequest extends AbstractRequest
     }
 
     /**
+     * Set the confirmation_method parameter.
+     *
+     * @param $value
+     */
+    public function setConfirmationMethod($value)
+    {
+        $this->setParameter('confirmation_method', $value);
+    }
+    /**
+     * Get the confirmation_method parameter.
+     *
+     * @return mixed
+     */
+    public function getConfirmationMethod()
+    {
+        return $this->getParameter('confirmation_method');
+    }
+
+    /**
      * @return mixed
      */
     public function getDestination()
@@ -388,6 +407,10 @@ class AuthorizeRequest extends AbstractRequest
 
         if ($this->getSetupFutureUsage()) {
             $data['setup_future_usage'] = $this->getSetupFutureUsage();
+        }
+
+        if ($this->getConfirmationMethod()) {
+            $data['confirmation_method'] = $this->getConfirmationMethod();
         }
 
         $data['off_session'] = $this->getOffSession() ? 'true' : 'false';
