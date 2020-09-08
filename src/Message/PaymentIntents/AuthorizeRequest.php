@@ -415,9 +415,6 @@ class AuthorizeRequest extends AbstractRequest
 
         $data['off_session'] = $this->getOffSession() ? 'true' : 'false';
 
-        $data['confirmation_method'] = 'manual';
-        $data['capture_method'] = 'manual';
-
         $data['confirm'] = $this->getConfirm() ? 'true' : 'false';
 
         if ($this->getConfirm() && !$this->getOffSession()) {
